@@ -144,5 +144,33 @@ button,.button{border-radius:12px}
 </footer>
 
 <script src="app.js"></script>
+
+<script>
+// v2.2 DOM hider for legacy tiles/sections by text content
+document.addEventListener('DOMContentLoaded', () => {
+  const containsText = (el, txt) => el && (el.textContent||'').toLowerCase().includes(txt.toLowerCase());
+  // Hide any element that looks like "Choose Day"
+  document.querySelectorAll('h1,h2,h3,section,div').forEach(el=>{
+    if (containsText(el, 'choose day')) {
+      // hide the element and its immediate next sibling if it's a grid
+      el.style.display='none';
+      if (el.nextElementSibling) el.nextElementSibling.style.display='none';
+      const p = el.closest('section,div,main,article');
+      if (p) p.style.setProperty('display','none','important');
+    }
+  });
+  // Hide containers that mostly contain numeric day tiles (buttons 1-31)
+  document.querySelectorAll('section,div,ul,ol').forEach(container=>{
+    const btns = Array.from(container.querySelectorAll('button,a,li,div')).filter(n=>{
+      const t=(n.textContent||'').trim();
+      return /^[1-9]$|^1\d$|^2\d$|^3[01]$/.test(t);
+    });
+    if (btns.length >= 5) { // it's likely a day grid
+      container.style.setProperty('display','none','important');
+    }
+  });
+});
+</script>
+
 </body>
 </html>

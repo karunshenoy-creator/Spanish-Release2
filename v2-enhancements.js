@@ -156,3 +156,72 @@
     }
   });
 })();
+
+
+// v2.2: stronger audio unlock and quiz/listen guards
+(function(){
+  let audioUnlocked=false;
+  function unlockAudio(){
+    if (audioUnlocked) return;
+    const beep=document.getElementById("rpSelectBeep");
+    if (beep && beep.play) { try{beep.play().catch(()=>{});}catch(e){} }
+    audioUnlocked=true;
+    window.removeEventListener("pointerdown", unlockAudio, true);
+    window.removeEventListener("keydown", unlockAudio, true);
+    window.removeEventListener("touchstart", unlockAudio, true);
+  }
+  window.addEventListener("pointerdown", unlockAudio, true);
+  window.addEventListener("keydown", unlockAudio, true);
+  window.addEventListener("touchstart", unlockAudio, true);
+
+  // Always ensure dropdown exists and defaults to 1
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const sel=document.getElementById("daySelect");
+    if (sel && !sel.value) sel.value="1";
+  });
+
+  // Force enhancements after any click on Start or tab-switch
+  const reEnhance = ()=> setTimeout(()=>{
+    try{ if (typeof enhanceQuiz==='function') enhanceQuiz(); }catch(e){}
+    try{ if (typeof enhanceListenSpeak==='function') enhanceListenSpeak(); }catch(e){}
+  }, 500);
+  document.addEventListener("click", (e)=>{
+    const id=(e.target && e.target.id)||'';
+    if (id==='dayStartBtn') reEnhance();
+  }, true);
+
+  // If only one quiz question found, synthesize more (3–5 total)
+  function synthesizeQuizIfNeeded(){
+    const day=window.currentDay || parseInt(document.getElementById("daySelect")?.value||"1",10);
+    let vocab=[];
+    if (Array.isArray(window.vocab)) vocab=window.vocab;
+    if (window.dayVocab && Array.isArray(window.dayVocab[day])) vocab=window.dayVocab[day];
+    let quiz=null;
+    if (window.dailyQuiz && Array.isArray(window.dailyQuiz[day])) quiz=window.dailyQuiz[day];
+    else if (Array.isArray(window.quiz)) quiz=window.quiz;
+    if (!Array.isArray(quiz)) return;
+    const ensureN=(min,max)=>{
+      while (quiz.length < min){
+        if (vocab && vocab.length){
+          const w=vocab[Math.floor(Math.random()*vocab.length)];
+          const term=(w&&(w.term||w.word||w.es||w.spanish||w))||"hola";
+          const ans=(w&&(w.meaning||w.translation||w.en||w.english||"hello"))||"hello";
+          quiz.push({type:"vocab-meaning", prompt:`What does "${term}" mean in English?`, answer:String(ans), options:null});
+        } else {
+          // simple cultural fallbacks
+          const pool=[
+            {type:"mc", prompt:"Which country is Madrid in?", answer:"Spain", options:["Spain","Mexico","Argentina","Chile"]},
+            {type:"truefalse", prompt:"Buenos Aires is in Argentina.", answer:"true"},
+            {type:"mc", prompt:"Official language of Spain?", answer:"Spanish", options:["Spanish","Portuguese","French","Italian"]},
+          ];
+          quiz.push(pool[Math.floor(Math.random()*pool.length)]);
+        }
+      }
+      while (quiz.length > max) quiz.pop();
+    };
+    ensureN(3,5);
+  }
+
+  // Hook synthesize after our existing enhanceQuiz/listen
+  setInterval(synthesizeQuizIfNeeded, 1000);
+})();
