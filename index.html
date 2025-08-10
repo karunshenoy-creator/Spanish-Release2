@@ -22,8 +22,23 @@ body{background:linear-gradient(180deg,#0b1220 0%,#0f172a 100%);color:var(--rp-t
 .rp-hide-tiles .day-tiles,.rp-hide-tiles .day-grid,.rp-hide-tiles .days,.rp-hide-tiles [data-role="day-tiles"]{display:none!important}
 button,.button{border-radius:12px}
 </style>
+<style>
+/* v2.1: force-hide common day selection grids/sections */
+.rp-hide-tiles .choose-day, 
+.rp-hide-tiles .day-chooser,
+.rp-hide-tiles #choose-day,
+.rp-hide-tiles section[data-section="choose-day"],
+.rp-hide-tiles .grid-days,
+.rp-hide-tiles .days-container,
+.rp-hide-tiles .days,
+.rp-hide-tiles .day-tiles,
+.rp-hide-tiles .day-grid,
+.rp-hide-tiles .tiles,
+.rp-hide-tiles h2:has(> span[data-label='Choose Day']),
+.rp-hide-tiles h2:contains('Choose Day') { display:none !important; }
+</style>
 </head>
-<body class=\"rp-hide-tiles\">
+<body class=\"rp-hide-tiles\" class="rp-hide-tiles">
 
 <div id="rp-v2-toolbar" class="rp-card" style="margin: 12px auto; max-width: 980px;">
   <div class="rp-header">

@@ -100,3 +100,59 @@
     document.addEventListener("day-changed", ()=> setTimeout(()=>{enhanceQuiz(); enhanceListenSpeak();}, 300));
   });
 })();
+
+
+// v2.1 additions
+(function(){
+  let audioUnlocked = false;
+  function unlockAudio(){
+    if (audioUnlocked) return;
+    const beep = document.getElementById("rpSelectBeep");
+    try{ beep && beep.play && beep.play().catch(()=>{}); }catch(e){}
+    audioUnlocked = true;
+    window.removeEventListener("pointerdown", unlockAudio, true);
+    window.removeEventListener("keydown", unlockAudio, true);
+  }
+  window.addEventListener("pointerdown", unlockAudio, true);
+  window.addEventListener("keydown", unlockAudio, true);
+
+  // default the dropdown to Day 1
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const sel=document.getElementById("daySelect");
+    if (sel && !sel.value) sel.value="1";
+  });
+
+  // Expand simulateOldDaySelection with more heuristics: look for buttons whose text contains the number,
+  // or a data attribute like data-dayindex
+  const _origSim = (typeof simulateOldDaySelection==='function') ? simulateOldDaySelection : null;
+  window.simulateOldDaySelection = function(day){
+    // Original first
+    if (_origSim && _origSim(day)) return true;
+    // Heuristic 2: any element with data-dayindex or data-day-num
+    const q2 = document.querySelector(`[data-dayindex="${day}"], [data-day-num="${day}"]`);
+    if (q2){ q2.click(); return true; }
+    // Heuristic 3: buttons or anchors containing the number as standalone or "Day X"
+    const candidates = Array.from(document.querySelectorAll("button,a,div,span"));
+    for (const el of candidates){
+      const t = (el.textContent||"").trim().toLowerCase();
+      if (t === String(day) || t === ("day "+day)) { el.click(); return true; }
+    }
+    // Heuristic 4: set globally known vars and call start functions if present
+    window.currentDay = day;
+    if (typeof window.selectDay === "function"){ window.selectDay(day); return true; }
+    if (typeof window.startDay === "function"){ window.startDay(day); return true; }
+    document.dispatchEvent(new CustomEvent("day-changed",{detail:{day}}));
+    return false;
+  };
+
+  // When user clicks Start, also scroll to main study area if present
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const startBtn = document.getElementById("dayStartBtn");
+    if (startBtn){
+      startBtn.addEventListener("click", ()=>{
+        const main = document.querySelector("main") || document.querySelector("[data-role='main']") || document.body;
+        if (main && main.scrollIntoView) setTimeout(()=>main.scrollIntoView({behavior:"smooth", block:"start"}), 50);
+      });
+    }
+  });
+})();
