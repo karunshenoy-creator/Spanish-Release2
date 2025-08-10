@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Learn Spanish — Rutas y Palabras v2</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-180.png">
+<style>
+:root{--rp-accent:#4f46e5;--rp-bg:#0f172a;--rp-surface:#111827;--rp-card:#1f2937;--rp-text:#e5e7eb;--rp-muted:#9ca3af;--rp-radius:14px;--rp-shadow:0 10px 24px rgba(0,0,0,.35)}
+body{background:linear-gradient(180deg,#0b1220 0%,#0f172a 100%);color:var(--rp-text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.rp-card{background:var(--rp-card);border-radius:var(--rp-radius);box-shadow:var(--rp-shadow);padding:clamp(14px,2.5vw,28px);border:1px solid rgba(255,255,255,.05)}
+.rp-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 6px 0}
+.rp-title{font-size:clamp(18px,2.6vw,28px);font-weight:700;letter-spacing:.2px}
+.rp-actions button,.rp-btn{background:linear-gradient(180deg,#6366f1,#4f46e5);color:#fff;border:none;padding:10px 14px;border-radius:12px;cursor:pointer;transition:transform .08s ease,box-shadow .2s ease;box-shadow:0 10px 18px rgba(79,70,229,.28)}
+.rp-actions button:hover,.rp-btn:hover{transform:translateY(-1px)}
+.rp-select{appearance:none;background:#0b1020;border:1px solid rgba(255,255,255,.12);color:var(--rp-text);padding:10px 14px;border-radius:12px;cursor:pointer}
+.rp-inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rp-hide-tiles .day-tiles,.rp-hide-tiles .day-grid,.rp-hide-tiles .days,.rp-hide-tiles [data-role="day-tiles"]{display:none!important}
+button,.button{border-radius:12px}
+</style>
+</head>
+<body class=\"rp-hide-tiles\">
+
+<div id="rp-v2-toolbar" class="rp-card" style="margin: 12px auto; max-width: 980px;">
+  <div class="rp-header">
+    <div class="rp-title">Learn Spanish — Rutas y Palabras v2</div>
+    <div class="rp-actions rp-inline">
+      <label for="daySelect">Day:</label>
+      <select id="daySelect" class="rp-select" aria-label="Select day"></select>
+      <button id="dayStartBtn" class="rp-btn" type="button" aria-label="Start selected day">Start</button>
+    </div>
+  </div>
+</div>
+<audio id="rpSelectBeep" preload="auto"><source src="data:audio/wav;base64,UklGRmQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAaW1hZ2VkaXRpbmcuLi4=" type="audio/wav"></audio>
+<script id="rp-v2-enhancer" defer src="./v2-enhancements.js"></script>
+
+<header>
+  <h1>Rutas y Palabras v2</h1>
+  <p class="subtitle">15 minutes a day · Travel-ready Spanish in 4 months</p>
+</header>
+
+<main>
+  <section id="onboarding" class="panel">
+    <h2>Bienvenido</h2>
+    <p>Pick your daily target and start at Day 1. Your progress is saved in your browser.</p>
+    <label>Daily target:
+      <select id="dailyTarget">
+        <option value="15">15 min</option>
+        <option value="10">10 min</option>
+        <option value="20">20 min</option>
+      </select>
+    </label>
+    <div class="stats">
+      <div>Streak: <span id="streak">0</span> 🔥</div>
+      <div>XP: <span id="xp">0</span> ⭐</div>
+    </div>
+  </section>
+
+  <section id="dayPicker" class="panel">
+    <h2>Choose Day</h2>
+    <div id="days" class="days"></div>
+  </section>
+
+  <section id="lesson" class="panel hidden">
+    <h2 id="dayTitle">Day</h2>
+    <div class="lesson-nav">
+      <button id="btnFlash" class="tab active">A. Speed Cards</button>
+      <button id="btnSpeak" class="tab">B. Listen & Speak</button>
+      <button id="btnQuest" class="tab">C. Cultural Quest</button>
+    </div>
+
+    <div id="flashcards" class="stage">
+      <div id="flashCard" class="card">
+        <div id="flashFront" class="front">...</div>
+        <div id="flashBack" class="back">...</div>
+      </div>
+      <div class="controls">
+        <button id="btnPrev">◀︎</button>
+        <button id="btnFlip">Translate</button>
+        <button id="btnSpeakCard">🔊</button>
+        <button id="btnNext">▶︎</button>
+      </div>
+      <div class="srs">
+        <button data-rate="again">Again</button>
+        <button data-rate="hard">Hard</button>
+        <button data-rate="good">Good</button>
+        <button data-rate="easy">Easy</button>
+      </div>
+    </div>
+
+    <div id="speak" class="stage hidden">
+      <p id="dialogueContext" class="context"></p>
+      <div id="dialogueBox" class="dialogue"></div>
+      <div class="controls">
+        <button id="btnPlayLine">▶️ Play Line</button>
+        <button id="btnRecord">🎙️ Speak</button>
+        <span id="recStatus"></span>
+      </div>
+    </div>
+
+    <div id="quest" class="stage hidden">
+      <p id="questPrompt" class="context"></p>
+      <div id="questOptions" class="options"></div>
+      <p id="questFeedback" class="feedback"></p>
+    </div>
+
+    <div class="complete">
+      <button id="btnCompleteDay">Mark Day Complete ✅</button>
+    </div>
+  </section>
+
+  <section id="help" class="panel">
+    <h2>Help & Tips</h2>
+    <ul>
+      <li>Click a day to start. Finish all three tabs for best results.</li>
+      <li>Use 🔊 to hear Spanish with your browser’s Spanish voice (es-ES or es-MX if available).</li>
+      <li>Use 🎙️ to practice speaking. Works best in Chrome desktop / Android.</li>
+      <li>Your streak and XP save locally. Clearing site data will reset progress.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <small>© 2025 Rutas y Palabras v2 · Offline demo for personal learning</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

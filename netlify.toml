@@ -1,0 +1,5 @@
+# Optional: uncomment the redirect below if you use client-side routing (e.g., React Router)
+#[[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200

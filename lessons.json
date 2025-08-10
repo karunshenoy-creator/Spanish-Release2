@@ -1,0 +1,1715 @@
+[
+  {
+    "theme": "Greetings & Basics 1",
+    "speed_cards": [
+      {
+        "es": "Hola",
+        "en": "Hello"
+      },
+      {
+        "es": "Adiós",
+        "en": "Goodbye"
+      },
+      {
+        "es": "Por favor",
+        "en": "Please"
+      },
+      {
+        "es": "Gracias",
+        "en": "Thank you"
+      },
+      {
+        "es": "Sí",
+        "en": "Yes"
+      },
+      {
+        "es": "No",
+        "en": "No"
+      }
+    ],
+    "dialogue": {
+      "context": "Café greeting in Mexico City",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Hola, ¿cómo está?"
+        },
+        {
+          "lang": "en",
+          "text": "Hello, how are you?"
+        },
+        {
+          "lang": "es",
+          "text": "Muy bien, gracias."
+        },
+        {
+          "lang": "en",
+          "text": "Very well, thanks."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "What is the capital of Mexico?",
+      "options": [
+        "Ciudad de México (CDMX)",
+        "Guadalajara",
+        "Monterrey"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Dónde está el centro?"
+    }
+  },
+  {
+    "theme": "Polite Phrases",
+    "speed_cards": [
+      {
+        "es": "Buenos días",
+        "en": "Good morning"
+      },
+      {
+        "es": "Buenas tardes",
+        "en": "Good afternoon"
+      },
+      {
+        "es": "Buenas noches",
+        "en": "Good night/evening"
+      },
+      {
+        "es": "Perdón",
+        "en": "Pardon"
+      },
+      {
+        "es": "Disculpe",
+        "en": "Excuse me"
+      }
+    ],
+    "dialogue": {
+      "context": "Shop etiquette in Havana",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Disculpe, ¿me ayuda?"
+        },
+        {
+          "lang": "en",
+          "text": "Excuse me, can you help me?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Who painted 'La Jungla' (The Jungle)?",
+      "options": [
+        "Wifredo Lam",
+        "Diego Rivera",
+        "Fernando Botero"
+      ],
+      "answer_idx": 0,
+      "unlock": "Me gusta el arte"
+    }
+  },
+  {
+    "theme": "Numbers 1–6",
+    "speed_cards": [
+      {
+        "es": "Uno",
+        "en": "One"
+      },
+      {
+        "es": "Dos",
+        "en": "Two"
+      },
+      {
+        "es": "Tres",
+        "en": "Three"
+      },
+      {
+        "es": "Cuatro",
+        "en": "Four"
+      },
+      {
+        "es": "Cinco",
+        "en": "Five"
+      },
+      {
+        "es": "Seis",
+        "en": "Six"
+      }
+    ],
+    "dialogue": {
+      "context": "Ordering two coffees in Antigua",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Quisiera dos cafés, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "I would like two coffees, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Which civilization built Tikal?",
+      "options": [
+        "Maya",
+        "Aztec",
+        "Inca"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Cómo llego a Tikal?"
+    }
+  },
+  {
+    "theme": "Numbers 7–100",
+    "speed_cards": [
+      {
+        "es": "Siete",
+        "en": "Seven"
+      },
+      {
+        "es": "Ocho",
+        "en": "Eight"
+      },
+      {
+        "es": "Nueve",
+        "en": "Nine"
+      },
+      {
+        "es": "Diez",
+        "en": "Ten"
+      },
+      {
+        "es": "Veinte",
+        "en": "Twenty"
+      },
+      {
+        "es": "Cien",
+        "en": "One hundred"
+      }
+    ],
+    "dialogue": {
+      "context": "Buying bus tickets in San Salvador",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Dos boletos al centro, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "Two tickets to downtown, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Volcano near San Salvador?",
+      "options": [
+        "Volcán de San Salvador",
+        "Cotopaxi",
+        "Osorno"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Podemos ir al volcán?"
+    }
+  },
+  {
+    "theme": "Market Basics",
+    "speed_cards": [
+      {
+        "es": "¿Cuánto cuesta?",
+        "en": "How much is it?"
+      },
+      {
+        "es": "Quiero",
+        "en": "I want"
+      },
+      {
+        "es": "No quiero",
+        "en": "I don't want"
+      },
+      {
+        "es": "Aquí",
+        "en": "Here"
+      },
+      {
+        "es": "Allí",
+        "en": "There"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking price in Oaxaca market",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Cuánto cuesta esto?"
+        },
+        {
+          "lang": "en",
+          "text": "How much is this?"
+        },
+        {
+          "lang": "es",
+          "text": "¿Me hace precio?"
+        },
+        {
+          "lang": "en",
+          "text": "Can you give me a better price?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Who was married to Diego Rivera?",
+      "options": [
+        "Frida Kahlo",
+        "Remedios Varo",
+        "Leonora Carrington"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Dónde está el museo de Frida?"
+    }
+  },
+  {
+    "theme": "Qualities",
+    "speed_cards": [
+      {
+        "es": "Grande",
+        "en": "Big"
+      },
+      {
+        "es": "Pequeño",
+        "en": "Small"
+      },
+      {
+        "es": "Caliente",
+        "en": "Hot"
+      },
+      {
+        "es": "Frío",
+        "en": "Cold"
+      },
+      {
+        "es": "Bueno",
+        "en": "Good"
+      },
+      {
+        "es": "Malo",
+        "en": "Bad"
+      }
+    ],
+    "dialogue": {
+      "context": "Ordering a cold drink in Havana",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Quisiera agua fría, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "I would like cold water, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Which US writer lived long in Havana?",
+      "options": [
+        "Ernest Hemingway",
+        "Mark Twain",
+        "William Faulkner"
+      ],
+      "answer_idx": 0,
+      "unlock": "Me encanta la literatura"
+    }
+  },
+  {
+    "theme": "Review 1",
+    "speed_cards": [
+      {
+        "es": "Repaso",
+        "en": "Review",
+        "note": "You got this!"
+      },
+      {
+        "es": "Número",
+        "en": "Number"
+      },
+      {
+        "es": "Precio",
+        "en": "Price"
+      },
+      {
+        "es": "Centro",
+        "en": "Downtown"
+      },
+      {
+        "es": "Museo",
+        "en": "Museum"
+      }
+    ],
+    "dialogue": {
+      "context": "Street food role-play in CDMX",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Hola, ¿qué me recomienda?"
+        },
+        {
+          "lang": "en",
+          "text": "Hi, what do you recommend?"
+        },
+        {
+          "lang": "es",
+          "text": "Una torta de pollo, muy buena."
+        },
+        {
+          "lang": "en",
+          "text": "A chicken sandwich, very good."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Pyramid in Chichén Itzá?",
+      "options": [
+        "El Castillo (Kukulcán)",
+        "Teotihuacán",
+        "Huayna Picchu"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera visitar Chichén Itzá"
+    }
+  },
+  {
+    "theme": "Drinks",
+    "speed_cards": [
+      {
+        "es": "Agua",
+        "en": "Water"
+      },
+      {
+        "es": "Cerveza",
+        "en": "Beer"
+      },
+      {
+        "es": "Vino",
+        "en": "Wine"
+      },
+      {
+        "es": "Café",
+        "en": "Coffee"
+      },
+      {
+        "es": "Té",
+        "en": "Tea"
+      },
+      {
+        "es": "Jugo",
+        "en": "Juice"
+      }
+    ],
+    "dialogue": {
+      "context": "Ordering wine in Guatemala City",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Tiene vino tinto?"
+        },
+        {
+          "lang": "en",
+          "text": "Do you have red wine?"
+        },
+        {
+          "lang": "es",
+          "text": "Quisiera una copa, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "I'd like a glass, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Corn-based hot drink in Guatemala?",
+      "options": [
+        "Atole",
+        "Mate",
+        "Chicha"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera un atole"
+    }
+  },
+  {
+    "theme": "Foods 1",
+    "speed_cards": [
+      {
+        "es": "Pan",
+        "en": "Bread"
+      },
+      {
+        "es": "Pollo",
+        "en": "Chicken"
+      },
+      {
+        "es": "Pescado",
+        "en": "Fish"
+      },
+      {
+        "es": "Carne",
+        "en": "Meat"
+      },
+      {
+        "es": "Arroz",
+        "en": "Rice"
+      },
+      {
+        "es": "Frijoles",
+        "en": "Beans"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking for recommendation in San Salvador",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Qué me recomienda?"
+        },
+        {
+          "lang": "en",
+          "text": "What do you recommend?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Famous beach for surfing in El Salvador?",
+      "options": [
+        "El Tunco",
+        "Varadero",
+        "Máncora"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quiero ir a El Tunco"
+    }
+  },
+  {
+    "theme": "Menu Words",
+    "speed_cards": [
+      {
+        "es": "Desayuno",
+        "en": "Breakfast"
+      },
+      {
+        "es": "Almuerzo",
+        "en": "Lunch"
+      },
+      {
+        "es": "Cena",
+        "en": "Dinner"
+      },
+      {
+        "es": "Postre",
+        "en": "Dessert"
+      },
+      {
+        "es": "Entrada",
+        "en": "Starter"
+      },
+      {
+        "es": "Plato principal",
+        "en": "Main course"
+      }
+    ],
+    "dialogue": {
+      "context": "Ordering a starter and main in Havana",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Para empezar, una sopa; de plato principal, pescado."
+        },
+        {
+          "lang": "en",
+          "text": "To start, a soup; for main, fish."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Cuba’s national dance?",
+      "options": [
+        "Danzón",
+        "Salsa",
+        "Merengue"
+      ],
+      "answer_idx": 0,
+      "unlock": "Me gusta bailar"
+    }
+  },
+  {
+    "theme": "With/Without + Tastes",
+    "speed_cards": [
+      {
+        "es": "Más",
+        "en": "More"
+      },
+      {
+        "es": "Menos",
+        "en": "Less"
+      },
+      {
+        "es": "Sin",
+        "en": "Without"
+      },
+      {
+        "es": "Con",
+        "en": "With"
+      },
+      {
+        "es": "Picante",
+        "en": "Spicy"
+      },
+      {
+        "es": "Dulce",
+        "en": "Sweet"
+      }
+    ],
+    "dialogue": {
+      "context": "Requesting no spice in Oaxaca",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Sin picante, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "No spice, please."
+        },
+        {
+          "lang": "es",
+          "text": "¿Puede ser menos picante?"
+        },
+        {
+          "lang": "en",
+          "text": "Could it be less spicy?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "UNESCO city famous for Day of the Dead?",
+      "options": [
+        "Oaxaca",
+        "Cancún",
+        "Puebla"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera visitar Oaxaca"
+    }
+  },
+  {
+    "theme": "Fullness & Bill",
+    "speed_cards": [
+      {
+        "es": "Estoy lleno",
+        "en": "I am full"
+      },
+      {
+        "es": "Tengo hambre",
+        "en": "I am hungry"
+      },
+      {
+        "es": "Tengo sed",
+        "en": "I am thirsty"
+      },
+      {
+        "es": "La cuenta",
+        "en": "The bill"
+      },
+      {
+        "es": "Propina",
+        "en": "Tip"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking for the bill in Antigua",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Me trae la cuenta, por favor?"
+        },
+        {
+          "lang": "en",
+          "text": "Could you bring the bill, please?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Lake surrounded by volcanoes in Guatemala?",
+      "options": [
+        "Atitlán",
+        "Texcoco",
+        "Titicaca"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera ver el lago Atitlán"
+    }
+  },
+  {
+    "theme": "Places",
+    "speed_cards": [
+      {
+        "es": "Restaurante",
+        "en": "Restaurant"
+      },
+      {
+        "es": "Mercado",
+        "en": "Market"
+      },
+      {
+        "es": "Calle",
+        "en": "Street"
+      },
+      {
+        "es": "Plaza",
+        "en": "Square"
+      },
+      {
+        "es": "Parque",
+        "en": "Park"
+      }
+    ],
+    "dialogue": {
+      "context": "Finding a nearby market in Havana",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Hay un mercado cerca?"
+        },
+        {
+          "lang": "en",
+          "text": "Is there a market nearby?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Historic square in Old Havana?",
+      "options": [
+        "Plaza Vieja",
+        "Zócalo",
+        "Plaza de Armas (Santiago)"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Dónde está la Plaza Vieja?"
+    }
+  },
+  {
+    "theme": "Review 2",
+    "speed_cards": [
+      {
+        "es": "Rico",
+        "en": "Tasty"
+      },
+      {
+        "es": "Cuenta",
+        "en": "Bill"
+      },
+      {
+        "es": "Cerca",
+        "en": "Near"
+      },
+      {
+        "es": "Lejos",
+        "en": "Far"
+      },
+      {
+        "es": "Sin",
+        "en": "Without"
+      },
+      {
+        "es": "Con",
+        "en": "With"
+      }
+    ],
+    "dialogue": {
+      "context": "Restaurant role-play in San Salvador",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Algo típico de aquí?"
+        },
+        {
+          "lang": "en",
+          "text": "Something typical from here?"
+        },
+        {
+          "lang": "es",
+          "text": "Pupusas, claro."
+        },
+        {
+          "lang": "en",
+          "text": "Pupusas, of course."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "National dish of El Salvador?",
+      "options": [
+        "Pupusas",
+        "Arepas",
+        "Tamales"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera una pupusa"
+    }
+  },
+  {
+    "theme": "Directions Basics",
+    "speed_cards": [
+      {
+        "es": "¿Dónde está...?",
+        "en": "Where is...?"
+      },
+      {
+        "es": "A la derecha",
+        "en": "To the right"
+      },
+      {
+        "es": "A la izquierda",
+        "en": "To the left"
+      },
+      {
+        "es": "Todo recto",
+        "en": "Straight ahead"
+      },
+      {
+        "es": "Cerca",
+        "en": "Near"
+      },
+      {
+        "es": "Lejos",
+        "en": "Far"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking for a museum in Mexico City",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Dónde está el museo?"
+        },
+        {
+          "lang": "en",
+          "text": "Where is the museum?"
+        },
+        {
+          "lang": "es",
+          "text": "A la izquierda y todo recto."
+        },
+        {
+          "lang": "en",
+          "text": "To the left and straight ahead."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Largest ancient city near CDMX?",
+      "options": [
+        "Teotihuacán",
+        "Tikal",
+        "Chan Chan"
+      ],
+      "answer_idx": 0,
+      "unlock": "Gracias por las indicaciones"
+    }
+  },
+  {
+    "theme": "Transport Words",
+    "speed_cards": [
+      {
+        "es": "Metro",
+        "en": "Subway"
+      },
+      {
+        "es": "Autobús",
+        "en": "Bus"
+      },
+      {
+        "es": "Parada",
+        "en": "Stop"
+      },
+      {
+        "es": "Boleto",
+        "en": "Ticket"
+      },
+      {
+        "es": "Estación",
+        "en": "Station"
+      },
+      {
+        "es": "Horario",
+        "en": "Schedule"
+      }
+    ],
+    "dialogue": {
+      "context": "Buying bus tickets in Havana",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Un boleto para el centro, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "One ticket to downtown, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Classic US cars in Havana are called?",
+      "options": [
+        "Almendrones",
+        "Carritos",
+        "Fierros"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Dónde está la parada?"
+    }
+  },
+  {
+    "theme": "Verbs for Motion",
+    "speed_cards": [
+      {
+        "es": "Ir",
+        "en": "To go"
+      },
+      {
+        "es": "Venir",
+        "en": "To come"
+      },
+      {
+        "es": "Llegar",
+        "en": "To arrive"
+      },
+      {
+        "es": "Salir",
+        "en": "To leave"
+      },
+      {
+        "es": "Tomar",
+        "en": "To take (transport)"
+      },
+      {
+        "es": "Cambiar",
+        "en": "To change/transfer"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking about a transfer in Guatemala City",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Tengo que cambiar de autobús?"
+        },
+        {
+          "lang": "en",
+          "text": "Do I need to change buses?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "UNESCO city with colonial ruins in Guatemala?",
+      "options": [
+        "Antigua Guatemala",
+        "Quetzaltenango",
+        "Flores"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Cada cuánto pasa el bus?"
+    }
+  },
+  {
+    "theme": "Addresses & Maps",
+    "speed_cards": [
+      {
+        "es": "Calle",
+        "en": "Street"
+      },
+      {
+        "es": "Avenida",
+        "en": "Avenue"
+      },
+      {
+        "es": "Esquina",
+        "en": "Corner"
+      },
+      {
+        "es": "Mapa",
+        "en": "Map"
+      },
+      {
+        "es": "Barrio",
+        "en": "Neighborhood"
+      },
+      {
+        "es": "Centro",
+        "en": "Downtown"
+      }
+    ],
+    "dialogue": {
+      "context": "Finding a street corner in San Salvador",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Busco la esquina de Calle Luna con Avenida Sol."
+        },
+        {
+          "lang": "en",
+          "text": "I'm looking for the corner of Moon Street and Sun Avenue."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Highest volcano in El Salvador?",
+      "options": [
+        "Santa Ana (Ilamatepec)",
+        "San Miguel",
+        "Izalco"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿En qué barrio estamos?"
+    }
+  },
+  {
+    "theme": "Honduras Hop",
+    "speed_cards": [
+      {
+        "es": "Frontera",
+        "en": "Border"
+      },
+      {
+        "es": "Pasaporte",
+        "en": "Passport"
+      },
+      {
+        "es": "Turista",
+        "en": "Tourist"
+      },
+      {
+        "es": "Entrada",
+        "en": "Entry"
+      },
+      {
+        "es": "Salida",
+        "en": "Exit"
+      },
+      {
+        "es": "Oficina",
+        "en": "Office"
+      }
+    ],
+    "dialogue": {
+      "context": "Border crossing to Copán",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Dónde sello mi pasaporte?"
+        },
+        {
+          "lang": "en",
+          "text": "Where do I get my passport stamped?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Famous Maya ruins in Honduras?",
+      "options": [
+        "Copán",
+        "Copal",
+        "Comayagua"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Cuánto cuesta el bus a Copán?"
+    }
+  },
+  {
+    "theme": "Nicaragua Moves",
+    "speed_cards": [
+      {
+        "es": "Carretera",
+        "en": "Highway"
+      },
+      {
+        "es": "Peaje",
+        "en": "Toll"
+      },
+      {
+        "es": "Taxi",
+        "en": "Taxi"
+      },
+      {
+        "es": "Conductor",
+        "en": "Driver"
+      },
+      {
+        "es": "Asiento",
+        "en": "Seat"
+      },
+      {
+        "es": "Maleta",
+        "en": "Suitcase"
+      }
+    ],
+    "dialogue": {
+      "context": "Taxi from León to Managua",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Necesito un taxi. ¿Cuánto cuesta a Managua?"
+        },
+        {
+          "lang": "en",
+          "text": "I need a taxi. How much to Managua?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Colonial city known for cathedrals in Nicaragua?",
+      "options": [
+        "León",
+        "Granada",
+        "Bluefields"
+      ],
+      "answer_idx": 1,
+      "unlock": "Quisiera visitar Granada también"
+    }
+  },
+  {
+    "theme": "Costa Rica & Panama",
+    "speed_cards": [
+      {
+        "es": "Reserva",
+        "en": "Reservation"
+      },
+      {
+        "es": "Entrada (ticket)",
+        "en": "Admission ticket"
+      },
+      {
+        "es": "Sendero",
+        "en": "Trail"
+      },
+      {
+        "es": "Parque Nacional",
+        "en": "National Park"
+      },
+      {
+        "es": "Fauna",
+        "en": "Wildlife"
+      },
+      {
+        "es": "Guía",
+        "en": "Guide"
+      }
+    ],
+    "dialogue": {
+      "context": "Park entry in Costa Rica",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Cuánto cuesta la entrada al parque?"
+        },
+        {
+          "lang": "en",
+          "text": "How much is the park admission?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Man-made lake for Panama Canal operations?",
+      "options": [
+        "Gatún",
+        "Atitlán",
+        "Nahuel Huapi"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Hay un sendero fácil?"
+    }
+  },
+  {
+    "theme": "Question Words",
+    "speed_cards": [
+      {
+        "es": "¿Qué?",
+        "en": "What?"
+      },
+      {
+        "es": "¿Quién?",
+        "en": "Who?"
+      },
+      {
+        "es": "¿Dónde?",
+        "en": "Where?"
+      },
+      {
+        "es": "¿Cuándo?",
+        "en": "When?"
+      },
+      {
+        "es": "¿Por qué?",
+        "en": "Why?"
+      },
+      {
+        "es": "¿Cómo?",
+        "en": "How?"
+      }
+    ],
+    "dialogue": {
+      "context": "Small talk at a hostel in Panama City",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿De dónde eres?"
+        },
+        {
+          "lang": "en",
+          "text": "Where are you from?"
+        },
+        {
+          "lang": "es",
+          "text": "Soy de Nueva Zelanda. ¿Y tú?"
+        },
+        {
+          "lang": "en",
+          "text": "I'm from New Zealand. And you?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Old town of Panama City is called?",
+      "options": [
+        "Casco Viejo",
+        "Miraflores",
+        "Amador"
+      ],
+      "answer_idx": 0,
+      "unlock": "Me encanta Casco Viejo"
+    }
+  },
+  {
+    "theme": "About You",
+    "speed_cards": [
+      {
+        "es": "Me llamo...",
+        "en": "My name is..."
+      },
+      {
+        "es": "Soy de...",
+        "en": "I am from..."
+      },
+      {
+        "es": "Vivo en...",
+        "en": "I live in..."
+      },
+      {
+        "es": "Trabajo en...",
+        "en": "I work in..."
+      },
+      {
+        "es": "Viajo por...",
+        "en": "I'm traveling for..."
+      },
+      {
+        "es": "Estoy aprendiendo español",
+        "en": "I'm learning Spanish"
+      }
+    ],
+    "dialogue": {
+      "context": "Introducing yourself in Quito",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Me llamo Karun. Estoy aprendiendo español."
+        },
+        {
+          "lang": "en",
+          "text": "My name is Karun. I am learning Spanish."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Capital of Ecuador?",
+      "options": [
+        "Quito",
+        "Guayaquil",
+        "Cuenca"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Dónde puedo ver el Centro Histórico?"
+    }
+  },
+  {
+    "theme": "Weather & Time",
+    "speed_cards": [
+      {
+        "es": "Hace calor",
+        "en": "It's hot"
+      },
+      {
+        "es": "Hace frío",
+        "en": "It's cold"
+      },
+      {
+        "es": "Está nublado",
+        "en": "It's cloudy"
+      },
+      {
+        "es": "¿Qué hora es?",
+        "en": "What time is it?"
+      },
+      {
+        "es": "Temprano",
+        "en": "Early"
+      },
+      {
+        "es": "Tarde",
+        "en": "Late"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking about weather in Baños",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Cómo está el clima hoy?"
+        },
+        {
+          "lang": "en",
+          "text": "How's the weather today?"
+        },
+        {
+          "lang": "es",
+          "text": "Está nublado y hace frío."
+        },
+        {
+          "lang": "en",
+          "text": "It's cloudy and cold."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Ecuador is crossed by which line?",
+      "options": [
+        "La línea ecuatorial",
+        "El Trópico de Cáncer",
+        "El Meridiano de Greenwich"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿A qué hora sale el bus?"
+    }
+  },
+  {
+    "theme": "Events & Plans",
+    "speed_cards": [
+      {
+        "es": "Hoy",
+        "en": "Today"
+      },
+      {
+        "es": "Mañana",
+        "en": "Tomorrow"
+      },
+      {
+        "es": "Ayer",
+        "en": "Yesterday"
+      },
+      {
+        "es": "Después",
+        "en": "After"
+      },
+      {
+        "es": "Antes",
+        "en": "Before"
+      },
+      {
+        "es": "Luego",
+        "en": "Later"
+      }
+    ],
+    "dialogue": {
+      "context": "Planning a tour in Quito",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Hay tour mañana?"
+        },
+        {
+          "lang": "en",
+          "text": "Is there a tour tomorrow?"
+        },
+        {
+          "lang": "es",
+          "text": "Sí, sale a las nueve."
+        },
+        {
+          "lang": "en",
+          "text": "Yes, it leaves at nine."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Famous Andean market town?",
+      "options": [
+        "Otavalo",
+        "Potosí",
+        "Cusco"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera ir mañana temprano"
+    }
+  },
+  {
+    "theme": "Likes & Interests",
+    "speed_cards": [
+      {
+        "es": "Me gusta...",
+        "en": "I like..."
+      },
+      {
+        "es": "No me gusta...",
+        "en": "I don't like..."
+      },
+      {
+        "es": "Prefiero...",
+        "en": "I prefer..."
+      },
+      {
+        "es": "¿Te gusta...?",
+        "en": "Do you like...?"
+      },
+      {
+        "es": "Interesante",
+        "en": "Interesting"
+      },
+      {
+        "es": "Bonito",
+        "en": "Pretty/Nice"
+      }
+    ],
+    "dialogue": {
+      "context": "Chatting in a café in Valparaíso",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Me gusta el arte callejero."
+        },
+        {
+          "lang": "en",
+          "text": "I like street art."
+        },
+        {
+          "lang": "es",
+          "text": "¿Te gusta Valparaíso?"
+        },
+        {
+          "lang": "en",
+          "text": "Do you like Valparaíso?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Port city with hills and murals in Chile?",
+      "options": [
+        "Valparaíso",
+        "Concepción",
+        "La Serena"
+      ],
+      "answer_idx": 0,
+      "unlock": "¡Qué bonito!"
+    }
+  },
+  {
+    "theme": "People & Help",
+    "speed_cards": [
+      {
+        "es": "Amigo/Amiga",
+        "en": "Friend"
+      },
+      {
+        "es": "Gente",
+        "en": "People"
+      },
+      {
+        "es": "Ayuda",
+        "en": "Help"
+      },
+      {
+        "es": "Policía",
+        "en": "Police"
+      },
+      {
+        "es": "Médico",
+        "en": "Doctor"
+      },
+      {
+        "es": "Farmacia",
+        "en": "Pharmacy"
+      }
+    ],
+    "dialogue": {
+      "context": "Asking for help in Santiago",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Necesito ayuda. ¿Dónde hay una farmacia?"
+        },
+        {
+          "lang": "en",
+          "text": "I need help. Where is a pharmacy?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Poet who won the Nobel Prize in Chile?",
+      "options": [
+        "Pablo Neruda",
+        "Isabel Allende",
+        "Nicanor Parra"
+      ],
+      "answer_idx": 0,
+      "unlock": "Me encanta la poesía de Neruda"
+    }
+  },
+  {
+    "theme": "Review & Mock Day 1",
+    "speed_cards": [
+      {
+        "es": "Despertador",
+        "en": "Alarm clock"
+      },
+      {
+        "es": "Desayunar",
+        "en": "To eat breakfast"
+      },
+      {
+        "es": "Comprar",
+        "en": "To buy"
+      },
+      {
+        "es": "Visitar",
+        "en": "To visit"
+      },
+      {
+        "es": "Caminar",
+        "en": "To walk"
+      },
+      {
+        "es": "Descansar",
+        "en": "To rest"
+      }
+    ],
+    "dialogue": {
+      "context": "Mock travel day: morning to afternoon",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Buenos días, ¿dónde desayuno cerca?"
+        },
+        {
+          "lang": "en",
+          "text": "Good morning, where can I have breakfast nearby?"
+        },
+        {
+          "lang": "es",
+          "text": "Luego quiero comprar boletos para el museo."
+        },
+        {
+          "lang": "en",
+          "text": "Then I want to buy tickets for the museum."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Desert in northern Chile?",
+      "options": [
+        "Atacama",
+        "Sahara",
+        "Patagonia"
+      ],
+      "answer_idx": 0,
+      "unlock": "¿Cómo llego al valle de la Luna?"
+    }
+  },
+  {
+    "theme": "Review & Mock Day 2",
+    "speed_cards": [
+      {
+        "es": "Entrada",
+        "en": "Ticket/Entry"
+      },
+      {
+        "es": "Horario",
+        "en": "Schedule"
+      },
+      {
+        "es": "Ubicación",
+        "en": "Location"
+      },
+      {
+        "es": "Precio",
+        "en": "Price"
+      },
+      {
+        "es": "Demora",
+        "en": "Delay"
+      },
+      {
+        "es": "Disponible",
+        "en": "Available"
+      }
+    ],
+    "dialogue": {
+      "context": "Mock travel day: afternoon to evening",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Hay entradas disponibles para hoy?"
+        },
+        {
+          "lang": "en",
+          "text": "Are there tickets available for today?"
+        },
+        {
+          "lang": "es",
+          "text": "¿Cuál es el horario del último bus?"
+        },
+        {
+          "lang": "en",
+          "text": "What's the schedule of the last bus?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "UNESCO island famous for moai (not in our countries list but cultural cross-over)?",
+      "options": [
+        "Rapa Nui (Easter Island)",
+        "Galápagos",
+        "Juan Fernández"
+      ],
+      "answer_idx": 0,
+      "unlock": "Muchas gracias por su ayuda"
+    }
+  },
+  {
+    "theme": "Survival Phrases — Speed Run",
+    "speed_cards": [
+      {
+        "es": "¿Habla inglés?",
+        "en": "Do you speak English?"
+      },
+      {
+        "es": "No entiendo",
+        "en": "I don't understand"
+      },
+      {
+        "es": "Más despacio, por favor",
+        "en": "Slower, please"
+      },
+      {
+        "es": "Repita, por favor",
+        "en": "Repeat, please"
+      },
+      {
+        "es": "¿Puede escribirlo?",
+        "en": "Can you write it?"
+      },
+      {
+        "es": "¿Aceptan tarjeta?",
+        "en": "Do you accept card?"
+      }
+    ],
+    "dialogue": {
+      "context": "Quick-fire practice in a station",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "¿Puede repetir, por favor?"
+        },
+        {
+          "lang": "en",
+          "text": "Could you repeat, please?"
+        },
+        {
+          "lang": "es",
+          "text": "Más despacio, por favor."
+        },
+        {
+          "lang": "en",
+          "text": "Slower, please."
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "City with 'La Mitad del Mundo' monument?",
+      "options": [
+        "Quito",
+        "Lima",
+        "Bogotá"
+      ],
+      "answer_idx": 0,
+      "unlock": "Quisiera una entrada, pago con tarjeta"
+    }
+  },
+  {
+    "theme": "Confidence Builder — Small Talk",
+    "speed_cards": [
+      {
+        "es": "¿A qué te dedicas?",
+        "en": "What do you do?"
+      },
+      {
+        "es": "Viajo por dos meses",
+        "en": "I’m traveling for two months"
+      },
+      {
+        "es": "Me encanta la historia",
+        "en": "I love history"
+      },
+      {
+        "es": "Voy a...",
+        "en": "I’m going to..."
+      },
+      {
+        "es": "¿Recomiendas...?",
+        "en": "Do you recommend...?"
+      },
+      {
+        "es": "¡Buen provecho!",
+        "en": "Enjoy your meal!"
+      }
+    ],
+    "dialogue": {
+      "context": "Evening chat in a hostel",
+      "lines": [
+        {
+          "lang": "es",
+          "text": "Viajo por dos meses por Centro y Sudamérica."
+        },
+        {
+          "lang": "en",
+          "text": "I’m traveling for two months through Central and South America."
+        },
+        {
+          "lang": "es",
+          "text": "¿Qué recomiendas visitar aquí?"
+        },
+        {
+          "lang": "en",
+          "text": "What do you recommend visiting here?"
+        }
+      ]
+    },
+    "cultural_quiz": {
+      "q": "Canal locks visitors’ center in Panama City?",
+      "options": [
+        "Miraflores",
+        "Pedro Miguel",
+        "Gatún"
+      ],
+      "answer_idx": 0,
+      "unlock": "¡Qué buena recomendación!"
+    }
+  }
+]
