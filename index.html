@@ -172,5 +172,171 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<!-- v2.3-inline: polish + tile-hide + beep + quiz/listen hooks -->
+<style>
+:root{--rp-accent:#4f46e5;--rp-bg:#0f172a;--rp-card:#1f2937;--rp-text:#e5e7eb;--rp-shadow:0 10px 24px rgba(0,0,0,.35);--rp-radius:14px}
+body{background:linear-gradient(180deg,#0b1220 0%,#0f172a 100%);color:var(--rp-text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.rp-card{background:var(--rp-card);border-radius:var(--rp-radius);box-shadow:var(--rp-shadow);padding:clamp(14px,2.5vw,28px);border:1px solid rgba(255,255,255,.05)}
+.rp-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 6px}
+.rp-title{font-size:clamp(18px,2.6vw,28px);font-weight:700}
+.rp-actions button,.rp-btn{background:linear-gradient(180deg,#6366f1,#4f46e5);color:#fff;border:none;padding:10px 14px;border-radius:12px;cursor:pointer;transition:transform .08s,box-shadow .2s;box-shadow:0 10px 18px rgba(79,70,229,.28)}
+.rp-actions button:hover,.rp-btn:hover{transform:translateY(-1px)}
+.rp-select{appearance:none;background:#0b1020;border:1px solid rgba(255,255,255,.12);color:var(--rp-text);padding:10px 14px;border-radius:12px;cursor:pointer}
+.rp-inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* Force-hide legacy day grids/sections */
+.rp-hide-tiles .choose-day,.rp-hide-tiles .day-chooser,.rp-hide-tiles #choose-day,.rp-hide-tiles section[data-section="choose-day"],.rp-hide-tiles .grid-days,.rp-hide-tiles .days-container,.rp-hide-tiles .days,.rp-hide-tiles .day-tiles,.rp-hide-tiles .day-grid,.rp-hide-tiles .tiles{display:none!important}
+</style>
+
+<script>
+  // Ensure body gets the hide class even if not in markup
+  document.addEventListener('DOMContentLoaded',()=>{ document.body.classList.add('rp-hide-tiles'); });
+</script>
+
+<!-- Beep for selection feedback -->
+<audio id="rpSelectBeep" preload="auto">
+  <source src="data:audio/wav;base64,UklGRmQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAaW1hZ2VkaXRpbmcuLi4=" type="audio/wav">
+</audio>
+
+<script>
+(function(){
+  const $=(s,el=document)=>el.querySelector(s), $$=(s,el=document)=>Array.from(el.querySelectorAll(s));
+
+  // Unlock audio on first gesture (iOS/desktop requirement)
+  let audioUnlocked=false;
+  function unlockAudio(){
+    if (audioUnlocked) return;
+    const beep=$("#rpSelectBeep"); try{beep&&beep.play&&beep.play().catch(()=>{});}catch(e){}
+    audioUnlocked=true;
+    window.removeEventListener("pointerdown", unlockAudio, true);
+    window.removeEventListener("keydown", unlockAudio, true);
+    window.removeEventListener("touchstart", unlockAudio, true);
+  }
+  window.addEventListener("pointerdown", unlockAudio, true);
+  window.addEventListener("keydown", unlockAudio, true);
+  window.addEventListener("touchstart", unlockAudio, true);
+
+  // Add toolbar if it doesn't exist yet (safe-guard)
+  document.addEventListener("DOMContentLoaded", ()=>{
+    if (!$("#rp-v2-toolbar")){
+      const wrap=document.createElement("div");
+      wrap.innerHTML = `
+        <div id="rp-v2-toolbar" class="rp-card" style="margin:12px auto;max-width:980px">
+          <div class="rp-header">
+            <div class="rp-title">Learn Spanish — Rutas y Palabras v2</div>
+            <div class="rp-actions rp-inline">
+              <label for="daySelect">Day:</label>
+              <select id="daySelect" class="rp-select" aria-label="Select day"></select>
+              <button id="dayStartBtn" class="rp-btn" type="button">Start</button>
+            </div>
+          </div>
+        </div>`;
+      document.body.insertBefore(wrap.firstElementChild, document.body.firstChild);
+      const sel=$("#daySelect"); for(let i=1;i<=31;i++){ const o=document.createElement("option"); o.value=String(i); o.textContent="Day "+i; sel.appendChild(o); }
+      sel.value="1";
+    }
+  });
+
+  function tryBeep(){ const beep=$("#rpSelectBeep"); try{beep&&beep.play();}catch(e){} }
+
+  // Try to click your existing "day tile" handlers; else call common functions; else fire an event
+  function selectDayCompat(day){
+    const trySel=[`[data-day="${day}"]`,`[data-index="${day}"]`,`#day-${day}`,`button[data-day="${day}"]`];
+    for (const qs of trySel){ const el=document.querySelector(qs); if (el){ el.click(); return true; } }
+    const all=$$("button,[role='button'],.tile,.day,.day-tile");
+    for (const el of all){ const t=(el.textContent||"").trim().toLowerCase(); if (t===String(day)||t===("day "+day)){ el.click(); return true; } }
+    if (typeof window.selectDay==="function"){ window.selectDay(day); return true; }
+    if (typeof window.startDay==="function"){ window.startDay(day); return true; }
+    window.currentDay=day; document.dispatchEvent(new CustomEvent("day-changed",{detail:{day}})); return false;
+  }
+
+  document.addEventListener("change",(e)=>{
+    if (e.target && e.target.id==="daySelect") tryBeep();
+  });
+  document.addEventListener("click",(e)=>{
+    if (e.target && e.target.id==="dayStartBtn"){
+      const day=parseInt($("#daySelect").value||"1",10);
+      selectDayCompat(day);
+      tryBeep();
+      const main=document.querySelector("main")||document.querySelector("[data-role='main']")||document.body;
+      if (main&&main.scrollIntoView) setTimeout(()=>main.scrollIntoView({behavior:"smooth",block:"start"}),50);
+      setTimeout(enhanceAll,500);
+    }
+  }, true);
+
+  // ---- Quiz & Listen/Speak enforcement ----
+  function enhanceQuiz(){
+    const day=window.currentDay || parseInt($("#daySelect")?.value||"1",10);
+    let vocab=[];
+    if (Array.isArray(window.vocab)) vocab=window.vocab;
+    if (window.dayVocab && Array.isArray(window.dayVocab[day])) vocab=window.dayVocab[day];
+
+    let quiz=null;
+    if (window.dailyQuiz && Array.isArray(window.dailyQuiz[day])) quiz=window.dailyQuiz[day];
+    else if (Array.isArray(window.quiz)) quiz=window.quiz;
+    if (!Array.isArray(quiz)) return;
+
+    const addVocabQ=(w)=>{
+      const term=(w&&(w.term||w.word||w.es||w.spanish||w))||"hola";
+      const ans=(w&&(w.meaning||w.translation||w.en||w.english||"hello"))||"hello";
+      quiz.push({type:"vocab-meaning", prompt:`What does "${term}" mean in English?`, answer:String(ans), options:null});
+    };
+    while (quiz.length < 3){
+      if (vocab && vocab.length){ addVocabQ(vocab[Math.floor(Math.random()*vocab.length)]); }
+      else {
+        const pool=[
+          {type:"mc", prompt:"Which country is Madrid in?", answer:"Spain", options:["Spain","Mexico","Argentina","Chile"]},
+          {type:"truefalse", prompt:"Buenos Aires is in Argentina.", answer:"true"},
+          {type:"mc", prompt:"Official language of Spain?", answer:"Spanish", options:["Spanish","Portuguese","French","Italian"]},
+        ];
+        quiz.push(pool[Math.floor(Math.random()*pool.length)]);
+      }
+    }
+    while (quiz.length > 5) quiz.pop();
+  }
+
+  function enhanceListenSpeak(){
+    const day=window.currentDay || parseInt($("#daySelect")?.value||"1",10);
+    let lines=null;
+    if (window.listenSpeak && Array.isArray(window.listenSpeak[day])) lines=window.listenSpeak[day];
+    else if (Array.isArray(window.listenSpeak)) lines=window.listenSpeak;
+    if (!Array.isArray(lines)) return;
+    const min=3,max=4;
+
+    let vocab=[];
+    if (Array.isArray(window.vocab)) vocab=window.vocab;
+    if (window.dayVocab && Array.isArray(window.dayVocab[day])) vocab=window.dayVocab[day];
+    const simple=(w)=>{ const t=(w&&(w.term||w.word||w.es||w.spanish||w))||"Hola"; return `${t}.`; };
+
+    while (lines.length < min){
+      if (vocab && vocab.length) lines.push(simple(vocab[Math.floor(Math.random()*vocab.length)]));
+      else lines.push("Hola. ¿Cómo estás?");
+    }
+    while (lines.length > max) lines.pop();
+  }
+
+  function hideChooseDayByText(){
+    const has=(el,txt)=>el && (el.textContent||'').toLowerCase().includes(txt.toLowerCase());
+    document.querySelectorAll('h1,h2,h3,section,div').forEach(el=>{
+      if (has(el,'choose day')) {
+        el.style.display='none';
+        if (el.nextElementSibling) el.nextElementSibling.style.display='none';
+        const p=el.closest('section,div,main,article'); if (p) p.style.setProperty('display','none','important');
+      }
+    });
+    document.querySelectorAll('section,div,ul,ol').forEach(container=>{
+      const btns = Array.from(container.querySelectorAll('button,a,li,div')).filter(n=>{
+        const t=(n.textContent||'').trim(); return /^[1-9]$|^1\d$|^2\d$|^3[01]$/.test(t);
+      });
+      if (btns.length >= 5) container.style.setProperty('display','none','important');
+    });
+  }
+
+  function enhanceAll(){ hideChooseDayByText(); enhanceQuiz(); enhanceListenSpeak(); }
+  // keep nudging for late-loaded content
+  setInterval(enhanceAll, 1000);
+})();
+</script>
+
 </body>
 </html>
