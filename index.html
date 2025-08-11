@@ -338,5 +338,73 @@ body{background:linear-gradient(180deg,#0b1220 0%,#0f172a 100%);color:var(--rp-t
 })();
 </script>
 
+
+<script>
+// v2.3.2 — make Start reliably trigger the original day loader
+(function(){
+  function findDayElements(day){
+    const candidates = [];
+    const sels = [
+      `[data-day="${day}"]`,
+      `[data-index="${day}"]`,
+      `[data-dayindex="${day}"]`,
+      `[data-day-num="${day}"]`,
+      `#day-${day}`
+    ];
+    sels.forEach(q=>{ const el=document.querySelector(q); if (el) candidates.push(el); });
+    // elements whose text is the number or 'Day X'
+    document.querySelectorAll("button,a,div,span,li,label,input").forEach(el=>{
+      const t=(el.textContent||"").trim().toLowerCase();
+      if (t===String(day) || t===("day "+day)) candidates.push(el);
+      if (el.value && (String(el.value).trim()===String(day))) candidates.push(el);
+    });
+    return Array.from(new Set(candidates));
+  }
+
+  function fire(el, type){
+    const ev = new Event(type, {bubbles:true, cancelable:true});
+    el.dispatchEvent(ev);
+  }
+
+  // Override Start click to unhide, click, rehide
+  document.addEventListener("click", (e)=>{
+    const t = e.target;
+    if (!t || t.id!=="dayStartBtn") return;
+    const daySel = document.getElementById("daySelect");
+    const day = parseInt(daySel && daySel.value || "1", 10);
+
+    // 1) temporarily show legacy UI
+    document.body.classList.remove("rp-hide-tiles");
+
+    let acted = false;
+    const els = findDayElements(day);
+    for (const el of els){
+      // Try typical interactions
+      try { el.click(); acted = true; } catch(_){}
+      fire(el, "click");
+      fire(el, "input");
+      fire(el, "change");
+    }
+
+    // 2) Try common global functions if clicking didn't work
+    if (!acted) {
+      const fns = ["selectDay","startDay","loadDay","initDay","setDay","renderDay"];
+      for (const name of fns){
+        if (typeof window[name] === "function"){
+          try { window[name](day); acted = true; break; } catch(_){}
+        }
+      }
+      // Also try setting common globals
+      window.day = day;
+      window.currentDay = day;
+      document.dispatchEvent(new CustomEvent("day-changed", {detail:{day}}));
+    }
+
+    // 3) re-hide tiles a moment later
+    setTimeout(()=>{ document.body.classList.add("rp-hide-tiles"); }, 300);
+  }, true);
+})();
+</script>
+
 </body>
 </html>
